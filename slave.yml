@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: redis-slave
+        sentinel: "true"
     spec:
       containers:
       - name: redis-slave
@@ -57,8 +58,6 @@ spec:
   ports:
   - port: 6379
     name: redis
-  - port: 26379
-    name: redis-sentinel
   clusterIP: None
   selector:
     app: redis-slave

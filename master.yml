@@ -6,8 +6,6 @@ spec:
   ports:
   - port: 6379
     name: redis
-  - port: 26379
-    name: redis-sentinel
   clusterIP: None
   selector:
     app: redis-master
@@ -23,6 +21,7 @@ spec:
     metadata:
       labels:
         app: redis-master
+        sentinel: "true"
     spec:
       terminationGracePeriodSeconds: 10
       containers:
