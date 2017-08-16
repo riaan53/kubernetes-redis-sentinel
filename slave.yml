@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: redis
+        app: redis-slave
     spec:
       containers:
       - name: redis-slave
